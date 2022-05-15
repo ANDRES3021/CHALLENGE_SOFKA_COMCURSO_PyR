@@ -42,21 +42,14 @@ Dentro del reto se debe considerar lo siguiente:
 ## Modelo Entidad Relacion Base de datos
 
 con el fin de crear una base de datos relacional para el juego se realizo el siguiente modelo Entidad Relacion 
-[![Modelo](https://i.ibb.co/Ycjy5p1/Screenshot-from-2022-05-15-07-58-49.png "Modelo")](https://ibb.co/WkKPrgM "Modelo")
+[![Modelo](https://i.ibb.co/fQg52Nv/Screenshot-from-2022-05-15-08-38-31.png "Modelo")](https://ibb.co/N7vPsNS "Modelo")
 
-se realizo un proceso de normalizacion con el fin de evitar redundancia de datos y como resultado se obtuvo lo siguiente:
-- historico( id_ronda(fk),  fecha, id_jugador (fk), id_pregunta(fk), retiro, id_opcion(fk))
-- jugador(id_jugador, nombre, apellido)
-- preguntas(id_preguntas, texto pregunta,  id_categoria(fk))
-- opciones(id_opcion, pregunta(fk), texto_respuesta, veracidad)
-- rondaycategoria(id_ronda, premio)
-
-### Normalización
-- jugadores 3nf
-- preguntas 3nf
-- opciones  3nf
-- rondaycategoria 3nf
-- historico 3nf
+Se realizo un proceso de normalizacion de cada tabla hasta la tercera forma normal (los campos en negrilla son llaves primarias y fk representa llave foranea) y como resultado se obtuvo el siguiente modelo relacional:
+- historico( **idronda(fk),**  **fecha**,** idjugador (fk)**, idpregunta(fk), retiro, idopciones(fk))
+- jugadores(**id_jugador,** nombre, apellido)
+- preguntas(**id_preguntas**, texto_pregunta,  idcategoria(fk))
+- opciones(**id_opciones**, idpregunta(fk), texto_respuesta, veracidad)
+- rondaycategoria(**id_ronda**, premio)
 
 ## AUTOR
 
